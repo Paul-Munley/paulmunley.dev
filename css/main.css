@@ -469,6 +469,10 @@ h2 {
 		width: 65vw;
 		height: 40vw;
 	}
+
+	.card:not(:last-child) {
+		margin-bottom: 3rem;
+	}
 }
 
 .card--1 {
