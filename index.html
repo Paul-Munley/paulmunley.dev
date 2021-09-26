@@ -16,15 +16,18 @@
 		<!-- STYLES -->
 		<link rel="stylesheet" href="/css/main.css" />
 
+		<!-- JS -->
+		<script src="/js/scroll.js" defer></script>
+
 		<title>Paul Munley's Portfolio</title>
 	</head>
 	<body>
 		<header class="header">
-			<a href="#" class="logo">paul munley</a>
+			<a href="#home" class="logo">paul munley</a>
 			<div class="nav">
-				<a href="/about" class="nav__link">about</a>
-				<a href="/portfolio" class="nav__link">portfolio</a>
-				<a href="/contact" class="nav__link">contact</a>
+				<a href="#about" class="nav__link nav__link--about">about</a>
+				<a href="#projects" class="nav__link nav__link--portfolio">portfolio</a>
+				<a href="#contact" class="nav__link nav__link--contact">contact</a>
 			</div>
 		</header>
 		<main>
@@ -244,7 +247,7 @@
 								cols="50"
 							></textarea>
 						</div>
-						<button class="btn btn__dark">submit</button>
+						<a class="btn btn__dark">submit</a>
 					</form>
 				</div>
 			</div>
