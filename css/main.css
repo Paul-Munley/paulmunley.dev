@@ -141,6 +141,11 @@ h2 {
 	z-index: 4;
 	width: 100%;
 	background-color: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header--mobile {
+	display: none;
 }
 
 @media only screen and (min-width: 112.5em) {
@@ -152,15 +157,33 @@ h2 {
 	}
 }
 
+.nav--mobile {
+	display: none;
+}
+
+@media only screen and (max-width: 33.75em) {
+	/* .header {
+		display: none;
+	} */
+
+	/* .header--mobile {
+		
+	} */
+
+	.nav {
+		display: none;
+	}
+
+	.nav--mobile {
+	}
+}
+
 .logo {
 	text-decoration: inherit;
 	font-size: var(--font-size-md);
 	font-weight: bold;
 	color: var(--color-primary);
 	letter-spacing: -0.02em;
-}
-
-.nav {
 }
 
 .nav__link {
@@ -349,6 +372,7 @@ h2 {
 
 .textbox {
 	margin: 35.3rem 8rem 0 8rem;
+	width: 75vw;
 }
 
 .textbox__heading {
@@ -375,6 +399,19 @@ h2 {
 @media only screen and (min-width: 112.5em) {
 	.projects {
 		margin-left: calc(-1 * var(--body-padding-lr));
+	}
+}
+
+@media only screen and (max-width: 76.87em) {
+	.projects {
+		width: 100vw;
+		margin-left: -11rem;
+	}
+}
+
+@media only screen and (max-width: 51.62em) {
+	.projects {
+		height: auto;
 	}
 }
 
@@ -409,6 +446,15 @@ h2 {
 	}
 }
 
+@media only screen and (max-width: 76.87em) {
+	.projects__container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 2.58rem;
+	}
+}
+
 .card {
 	width: 37.6rem;
 	height: 23.5rem;
@@ -416,6 +462,13 @@ h2 {
 
 	position: relative;
 	perspective: 1500rem;
+}
+
+@media only screen and (max-width: 51.62em) {
+	.card {
+		width: 65vw;
+		height: 40vw;
+	}
 }
 
 .card--1 {
@@ -448,6 +501,13 @@ h2 {
 	transition: all 0.8s ease;
 }
 
+@media only screen and (max-width: 51.62em) {
+	.card__side {
+		width: 65vw;
+		height: 40vw;
+	}
+}
+
 /* Front Of Card */
 
 .card__side--front {
@@ -455,6 +515,13 @@ h2 {
 	height: 23.5rem;
 	position: relative;
 	z-index: 1;
+}
+
+@media only screen and (max-width: 51.62em) {
+	.card__side--front {
+		width: 65vw;
+		height: 40vw;
+	}
 }
 
 .card__side--front-1 {
@@ -497,6 +564,12 @@ h2 {
 	justify-content: space-evenly;
 	color: #ffffff;
 }
+
+/* @media only screen and (max-width: 51.62em) {
+	.card__side--back {
+		transform: scale(1.1);
+	}
+} */
 
 .card__side--back-1 {
 	background: linear-gradient(111.34deg, #3a3d40 0%, #808080 100%);
