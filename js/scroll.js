@@ -1,6 +1,14 @@
-const aboutBtn = document.querySelector(".nav__link--about");
-const portfolioBtn = document.querySelector(".nav__link--portfolio");
-const contactBtn = document.querySelector(".nav__link--contact");
+// SELECTORS
+
+const aboutBtns = document.querySelectorAll(".nav__link--about");
+const aboutBtnArray = [...aboutBtns];
+
+const portfolioBtns = document.querySelectorAll(".nav__link--portfolio");
+const portfolioBtnArray = [...portfolioBtns];
+
+const contactBtns = document.querySelectorAll(".nav__link--contact");
+const contactBtnArray = [...contactBtns];
+
 const homeBtn = document.querySelector(".logo");
 
 const subHeading = document.querySelectorAll(".heading--sub");
@@ -32,7 +40,6 @@ const homeHandler = e => {
 let observer = new IntersectionObserver(
 	entries => {
 		entries.forEach(entry => {
-			console.log(entry);
 			if (entry.isIntersecting && entry.target.classList[0] === "about") {
 				const aboutHeader = document.querySelector(".textbox__heading");
 				aboutHeader.classList.add("underline");
@@ -49,8 +56,35 @@ observer.observe(aboutSection);
 observer.observe(projectsSection);
 
 // EVENT LISTENERS
+aboutBtnArray.forEach(btn => {
+	btn.addEventListener("click", aboutHandler);
+});
 
-aboutBtn.addEventListener("click", aboutHandler);
-portfolioBtn.addEventListener("click", portfolioHandler);
-contactBtn.addEventListener("click", contactHandler);
+portfolioBtnArray.forEach(btn => {
+	btn.addEventListener("click", portfolioHandler);
+});
+
+contactBtnArray.forEach(btn => {
+	btn.addEventListener("click", contactHandler);
+});
+
 homeBtn.addEventListener("click", homeHandler);
+
+//////////////////////////////////////
+
+// FLIP CARD LOGIC
+
+const flipCardBtns = document.querySelectorAll(".flip-card");
+const flipCardBtnArray = [...flipCardBtns];
+console.log(flipCardBtnArray);
+
+const flipCardHandler = e => {
+	const parent = e.currentTarget.parentElement;
+	// Seclect and flip front side of card
+	parent.querySelector(".card__side--front").classList.toggle("flip-front");
+
+	// Select and flip back side of card
+	parent.querySelector(".card__side--back").classList.toggle("flip-back");
+};
+
+flipCardBtnArray.forEach(btn => btn.addEventListener("click", flipCardHandler));
