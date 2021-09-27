@@ -1,0 +1,25 @@
+{
+	"name": "paul-munley-portfolio-3",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/main.css -o css/style.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Paul-Munley/paulmunley.dev.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Paul-Munley/paulmunley.dev/issues"
+	},
+	"homepage": "https://github.com/Paul-Munley/paulmunley.dev#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"autoprefixer": "^10.3.6",
+		"postcss": "^8.3.8",
+		"postcss-cli": "^9.0.0"
+	}
+}
