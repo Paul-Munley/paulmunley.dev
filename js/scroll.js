@@ -88,3 +88,42 @@ const flipCardHandler = e => {
 };
 
 flipCardBtnArray.forEach(btn => btn.addEventListener("click", flipCardHandler));
+
+// HERO HEADER ANIMATION WORKAROUND FOR NOT BEING ABLE TO ANIMATE PSEDUO ELEMENT CONTENT ON SAFARI
+
+const lowerHeading = document.querySelector(".hero__heading--lower");
+
+const lowerHeadingTextArray = [
+	"Paul Munley",
+	"A Developer",
+	"A Husband",
+	"A Father",
+];
+
+const animation = () => {
+	let count = 0;
+
+	setInterval(() => {
+		lowerHeading.innerHTML = lowerHeadingTextArray[count];
+		count += 1;
+
+		if (count >= lowerHeadingTextArray.length) {
+			console.log("made it");
+			count = 0;
+		}
+	}, 2000);
+};
+
+// Duck Typing to see if the browser is using Safari
+var isSafari =
+	/constructor/i.test(window.HTMLElement) ||
+	(function (p) {
+		return p.toString() === "[object SafariRemoteNotification]";
+	})(
+		!window["safari"] ||
+			(typeof safari !== "undefined" && window["safari"].pushNotification)
+	);
+
+if (isSafari) {
+	animation();
+}

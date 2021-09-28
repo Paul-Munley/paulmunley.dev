@@ -328,7 +328,14 @@ h2 {
 .hero__heading--lower::before {
 	content: "";
 	display: block;
-	-webkit-animation: headingChange 12s linear 0.5s infinite;
+
+	/* -webkit-animation: headingChange 12s linear 0.5s infinite; */
+	-webkit-animation-name: headingChange;
+	-webkit-animation-duration: 12s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-delay: 0.5s;
+	-webkit-animation-iteration-count: infinite;
+
 	animation: headingChange 12s linear 0.5s infinite;
 }
 
