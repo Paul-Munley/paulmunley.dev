@@ -840,6 +840,12 @@ h2 {
 	height: 85rem;
 }
 
+@media only screen and (min-width: 112.5em) {
+	.contact {
+		grid-column: full-start / col-end 11;
+	}
+}
+
 @media only screen and (max-width: 76.87em) {
 	.contact {
 		width: 100vw;
